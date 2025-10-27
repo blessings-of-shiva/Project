@@ -1,0 +1,25 @@
+{
+    "version":2,
+    "builds":[
+        {
+            "src":"backend/server.js",
+            "use":"@vercel/nodemon"
+        },
+        {
+            "src":"client/package.json",
+            "use":"@vercel/static-build",
+            "config":{"distDir":"build"}
+        }
+    ],
+    "routes":[
+        {
+            "src":"/api/(.*)",
+            "dest":"backend/server.js"
+        },
+        {
+            "src":"/(.*)",
+            "dest":"client/dist/$1"
+        }
+    ]
+
+}
