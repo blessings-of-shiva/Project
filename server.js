@@ -9,11 +9,11 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/user",modelrouter);
 connectdb();
-app.listen(process.env.PORT,()=>{
+/*app.listen(process.env.PORT,()=>{
     console.log("server is running");
-});
-/*for vercel
-module.exports=app;*/
+});*/
+//for vercel
+module.exports=app;
 
 
 
